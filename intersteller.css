@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(wallpaperflare.com_wallpaper.jpg);
+    background-size: cover;
+    overflow: hidden;
+}
+
+.box {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    transform-style: preserve-3d;
+    animation: animate 20s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+
+.box span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+}
+
+.box span img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px; /* Add border radius */
+}
+
+.box span:nth-child(1) {
+    transform: rotateY(0deg) translateZ(400px);
+}
+
+.box span:nth-child(2) {
+    transform: rotateY(45deg) translateZ(400px);
+}
+
+.box span:nth-child(3) {
+    transform: rotateY(90deg) translateZ(400px);
+}
+
+.box span:nth-child(4) {
+    transform: rotateY(135deg) translateZ(400px);
+}
+
+.box span:nth-child(5) {
+    transform: rotateY(180deg) translateZ(400px);
+}
+
+.box span:nth-child(6) {
+    transform: rotateY(225deg) translateZ(400px);
+}
+
+.box span:nth-child(7) {
+    transform: rotateY(270deg) translateZ(400px);
+}
+.box span:nth-child(8) {
+    transform: rotateY(270deg) translateZ(400px);
+}
+.footer {
+    position: absolute; /* Set the position to absolute */
+    bottom: 0; /* Position at the bottom of the viewport */
+    width: 100%; /* Full width */
+    text-align: center; /* Center-align the text */
+   min-height: 16px;
+   font-size: 50px;
+    /* color: white; Text color */
+    padding: 10px 0; /* Optional padding */
+    /* Add more styles as needed */
+}
+.box.animate {
+    animation: animate 20s linear infinite;
+}
+@media (max-width: 576px) {
+    .box {
+      width: 100%;
+      height: 200px;
+    }
+  
+    .box span {
+      width: 50%;
+      height: 50%;
+    }
+  
+    .box span img {
+      width: 100%;
+      height: 100%;
+    }
+  
+    .footer {
+      font-size: 20px;
+    }
+  }
+  
